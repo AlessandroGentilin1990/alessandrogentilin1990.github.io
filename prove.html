@@ -7,16 +7,77 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Stile responsive per le icone -->
     <style>
-        /* Riduce dimensione icone e spazi su schermi piccoli */
+        /* Stile per garantire lo scroll su mobile */
+        html, body {
+            overflow-x: hidden;
+            overflow-y: auto;
+            height: 100%;
+        }
+        
+        #main {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+        
+        /* Header più compatto su mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2em !important;
+            }
+            
+            h2 {
+                font-size: 1.4em !important;
+            }
+            
+            p {
+                font-size: 1em !important;
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Riduzione dimensioni icone e spazi su schermi piccoli */
         @media (max-width: 600px) {
-            nav ul li a {
-                font-size: 1.2em !important; /* icone principali e social più piccole */
-            }
             nav ul {
-                gap: 1.5em; /* spazio ridotto tra le icone */
+                gap: 1.5em !important;
             }
+            
+            nav ul li a {
+                font-size: 1.2em !important;
+            }
+            
+            .icon-label {
+                font-size: 0.9em !important;
+            }
+            
+            /* Layout a colonna per icone principali su schermi molto piccoli */
+            @media (max-width: 400px) {
+                .main-icons {
+                    flex-direction: column !important;
+                    gap: 2em !important;
+                }
+            }
+        }
+        
+        /* Separatore più sottile su mobile */
+        @media (max-width: 600px) {
+            hr {
+                margin: 4em auto 2em auto !important;
+                width: 70% !important;
+            }
+        }
+        
+        /* Social icons wrap su schermi piccoli */
+        .social-icons {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .social-icons li {
+            margin: 0.5em;
         }
     </style>
 </head>
@@ -39,18 +100,18 @@
                 <!-- Tre icone principali con didascalia sotto -->
                 <div style="text-align: center; margin-top: 2em;">
                     <nav>
-                        <ul style="display: flex; justify-content: center; gap: 5em; flex-wrap: wrap; list-style: none; padding: 0;">
+                        <ul class="main-icons" style="display: flex; justify-content: center; gap: 5em; flex-wrap: wrap; list-style: none; padding: 0;">
                             <li style="display: flex; flex-direction: column; align-items: center;">
                                 <a href="ricerca.html" class="icon solid fa-flask" style="font-size: 1.5em;"></a>
-                                <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Ricerca</div>
+                                <div class="icon-label" style="margin-top: 0.5em; font-size: 1em; text-align: center;">Ricerca</div>
                             </li>
                             <li style="display: flex; flex-direction: column; align-items: center;">
                                 <a href="scuola.html" class="icon solid fa-graduation-cap" style="font-size: 1.5em;"></a>
-                                <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Scuola</div>
+                                <div class="icon-label" style="margin-top: 0.5em; font-size: 1em; text-align: center;">Scuola</div>
                             </li>
                             <li style="display: flex; flex-direction: column; align-items: center;">
                                 <a href="progetti.html" class="icon solid fa-lightbulb" style="font-size: 1.5em;"></a>
-                                <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Progetti</div>
+                                <div class="icon-label" style="margin-top: 0.5em; font-size: 1em; text-align: center;">Progetti</div>
                             </li>
                         </ul>
                     </nav>
@@ -61,7 +122,7 @@
 
                 <!-- Sette icone social con margine superiore maggiore -->
                 <nav>
-                    <ul style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2em; list-style: none; padding: 0; margin-top: 2em;">
+                    <ul class="social-icons" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2em; list-style: none; padding: 0; margin-top: 2em;">
                         <li><a href="https://www.linkedin.com/in/alessandrogentilin90/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
                         <li><a href="https://www.instagram.com/gentilinlab/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
                         <li><a href="https://www.youtube.com/@GentilinLab" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
