@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Stile responsive per le icone social -->
+    <!-- Stile responsive per le icone -->
     <style>
+        /* Riduce dimensione icone e spazi su schermi piccoli */
         @media (max-width: 600px) {
             nav ul li a {
-                font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
+                font-size: 1.2em !important; /* icone principali e social più piccole */
             }
             nav ul {
-                gap: 1em; /* spazio ridotto tra le icone */
+                gap: 1.5em; /* spazio ridotto tra le icone */
             }
         }
     </style>
@@ -38,7 +39,7 @@
                 <!-- Tre icone principali con didascalia sotto -->
                 <div style="text-align: center; margin-top: 2em;">
                     <nav>
-                        <ul style="display: flex; justify-content: center; gap: 5em; list-style: none; padding: 0;">
+                        <ul style="display: flex; justify-content: center; gap: 5em; flex-wrap: wrap; list-style: none; padding: 0;">
                             <li style="display: flex; flex-direction: column; align-items: center;">
                                 <a href="ricerca.html" class="icon solid fa-flask" style="font-size: 1.5em;"></a>
                                 <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Ricerca</div>
@@ -65,9 +66,9 @@
                         <li><a href="https://www.instagram.com/gentilinlab/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
                         <li><a href="https://www.youtube.com/@GentilinLab" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
                         <li><a href="https://www.facebook.com/profile.php?id=61579785837712" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="mailto:gentilin@cfptrissino.it?subject=Richiesta%20informazioni%20da%20sito%20web" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-                        <li><a href="https://www.researchgate.net/profile/Alessandro-Gentilin?ev=hdr_xprf" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
                         <li><a href="https://pubmed.ncbi.nlm.nih.gov/?sort=date&term=Gentilin+A&cauthor_id=40415541" class="icon solid fa-book"><span class="label">PubMed</span></a></li>
+                        <li><a href="https://www.researchgate.net/profile/Alessandro-Gentilin?ev=hdr_xprf" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
+                        <li><a href="mailto:gentilin@cfptrissino.it?subject=Richiesta%20informazioni%20da%20sito%20web" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
                     </ul>
                 </nav>
 
