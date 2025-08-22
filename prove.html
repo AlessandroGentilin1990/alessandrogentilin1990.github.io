@@ -1,102 +1,90 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		<title>Gentilin Lab</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+<head>
+    <title>Gentilin Lab</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-<style>
-@media (max-width: 600px) {
-    nav ul li a {
-        font-size: 1.2em !important;
-    }
-    nav ul {
-        gap: 1em;
-    }
-}
-</style>
+    <!-- Stile responsive per le icone social -->
+    <style>
+        @media (max-width: 600px) {
+            nav ul li a {
+                font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
+            }
+            nav ul {
+                gap: 1em; /* spazio ridotto tra le icone */
+            }
+        }
+    </style>
+</head>
+<body class="is-preload">
+    <div id="wrapper">
+        <div id="bg"></div>
+        <div id="overlay"></div>
+        <div id="main">
 
+            <!-- Header -->
+            <header id="header" style="text-align: center;">
+                <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
+                <h2 style="font-size: 1.8em; font-weight: normal; margin-top: 0.2em; margin-bottom: 0.5em;">
+                    by Alessandro Gentilin PhD
+                </h2>
+                <p style="font-size: 1.2em; margin-top: 0.5em;">
+                    Electronics, Software, Data Science, Statistics, AI & Algorithms for Industrial, Medical, and Sports Applications
+                </p>
 
-	</head>
-	<body class="is-preload">
-		<div id="wrapper">
-			<div id="bg"></div>
-			<div id="overlay"></div>
-			<div id="main">
+                <!-- Tre icone principali con didascalia sotto -->
+                <div style="text-align: center; margin-top: 2em;">
+                    <nav>
+                        <ul style="display: flex; justify-content: center; gap: 5em; list-style: none; padding: 0;">
+                            <li style="display: flex; flex-direction: column; align-items: center;">
+                                <a href="ricerca.html" class="icon solid fa-flask" style="font-size: 1.5em;"></a>
+                                <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Ricerca</div>
+                            </li>
+                            <li style="display: flex; flex-direction: column; align-items: center;">
+                                <a href="scuola.html" class="icon solid fa-graduation-cap" style="font-size: 1.5em;"></a>
+                                <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Scuola</div>
+                            </li>
+                            <li style="display: flex; flex-direction: column; align-items: center;">
+                                <a href="progetti.html" class="icon solid fa-lightbulb" style="font-size: 1.5em;"></a>
+                                <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Progetti</div>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
 
-<!-- Header -->
-<header id="header" style="text-align: center;">
-    <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
-    <h2 style="font-size: 1.8em; font-weight: normal; margin-top: 0.2em; margin-bottom: 0.5em;">
-        by Alessandro Gentilin PhD
-    </h2>
-    <p style="font-size: 1.2em; margin-top: 0.5em;">
-        Electronics, Software, Data Science, Statistics, AI & Algorithms for Industrial, Medical, and Sports Applications
-    </p>
+                <!-- Linea orizzontale bianca con margine superiore ancora maggiore -->
+                <hr style="border: 1px solid white; width: 50%; margin: 7em auto 2em auto;" />
 
-    <!-- Tre icone principali con didascalia sotto -->
-    <div style="text-align: center; margin-top: 2em;">
-        <nav>
-            <ul style="display: flex; justify-content: center; gap: 5em; list-style: none; padding: 0;">
-                <li style="display: flex; flex-direction: column; align-items: center;">
-                    <a href="ricerca.html" class="icon solid fa-flask" style="font-size: 1.5em;"></a>
-                    <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Ricerca</div>
-                </li>
-                <li style="display: flex; flex-direction: column; align-items: center;">
-                    <a href="scuola.html" class="icon solid fa-graduation-cap" style="font-size: 1.5em;"></a>
-                    <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Scuola</div>
-                </li>
-                <li style="display: flex; flex-direction: column; align-items: center;">
-                    <a href="progetti.html" class="icon solid fa-lightbulb" style="font-size: 1.5em;"></a>
-                    <div style="margin-top: 0.1em; font-size: 1em; text-align: center;">Progetti</div>
-                </li>
-            </ul>
-        </nav>
+                <!-- Sette icone social con margine superiore maggiore -->
+                <nav>
+                    <ul style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2em; list-style: none; padding: 0; margin-top: 2em;">
+                        <li><a href="https://www.linkedin.com/in/alessandrogentilin90/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                        <li><a href="https://www.instagram.com/gentilinlab/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                        <li><a href="https://www.youtube.com/@GentilinLab" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61579785837712" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                        <li><a href="mailto:gentilin@cfptrissino.it?subject=Richiesta%20informazioni%20da%20sito%20web" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                        <li><a href="https://www.researchgate.net/profile/Alessandro-Gentilin?ev=hdr_xprf" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
+                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/?sort=date&term=Gentilin+A&cauthor_id=40415541" class="icon solid fa-book"><span class="label">PubMed</span></a></li>
+                    </ul>
+                </nav>
+
+            </header>
+
+            <!-- Footer -->
+            <footer id="footer">
+                <span class="copyright">&copy; Dev. by Alessandro Gentilin.</span>
+            </footer>
+
+        </div>
     </div>
 
-    <!-- Linea orizzontale bianca con margine superiore ancora maggiore -->
-    <hr style="border: 1px solid white; width: 50%; margin: 7em auto 2em auto;" />
-
-
-<!-- Sette icone social con margine superiore maggiore -->
-<!-- Sette icone social con margine superiore maggiore -->
-<nav>
-    <ul style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2em; list-style: none; padding: 0; margin-top: 2em;">
-        <li><a href="https://www.linkedin.com/in/alessandrogentilin90/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a href="https://www.instagram.com/gentilinlab/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="https://www.youtube.com/@GentilinLab" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-        <li><a href="https://www.facebook.com/profile.php?id=61579785837712" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-        <li><a href="mailto:gentilin@cfptrissino.it?subject=Richiesta%20informazioni%20da%20sito%20web" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-        <li><a href="https://www.researchgate.net/profile/Alessandro-Gentilin?ev=hdr_xprf" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
-        <li><a href="https://pubmed.ncbi.nlm.nih.gov/?sort=date&term=Gentilin+A&cauthor_id=40415541" class="icon solid fa-book"><span class="label">PubMed</span></a></li>
-    </ul>
-</nav>
-
-
-</header>
-
-
-
-
-
-
-
-
-
-				<!-- Footer -->
-					<footer id="footer">
-						<span class="copyright">&copy; Dev. by Alessandro Gentilin. 
-					</footer>
-
-			</div>
-		</div>
-		<script>
-			window.onload = function() { document.body.classList.remove('is-preload'); }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-	</body>
+    <script>
+        window.onload = function() { document.body.classList.remove('is-preload'); }
+        window.ontouchmove = function() { return false; }
+        window.onorientationchange = function() { document.body.scrollTop = 0; }
+    </script>
+</body>
 </html>
