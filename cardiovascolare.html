@@ -132,13 +132,13 @@
 <style>
 @media (max-width: 768px) {
     .three-columns {
-        flex-direction: column; /* colonne impilate */
+        flex-direction: column; /* colonne impilate verticalmente */
     }
 
     .column {
         margin: 15px 0;
-        max-height: 10vh;      /* altezza limitata su mobile */
-        overflow-y: auto;      /* permette lo scroll dentro la colonna */
+        height: 30vh;          /* altezza ridotta per vedere tutte e tre le colonne sullo schermo */
+        overflow-y: auto;      /* permette lo scroll interno di ciascuna colonna */
     }
 
     .techniques-container,
@@ -149,10 +149,11 @@
     }
 
     .separator {
-        display: none;
+        display: none;         /* nasconde i separatori verticali */
     }
 }
 </style>
+
 
 
 
