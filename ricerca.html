@@ -6,6 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+    <!-- Stile responsive per le icone principali -->
+<style>
+    @media (max-width: 600px) {
+        nav ul li a {
+            font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
+        }
+        nav ul {
+            gap: 1em !important; /* spazio ridotto tra le icone */
+            flex-wrap: wrap; /* permette alle icone di andare a capo se necessario */
+            justify-content: center;
+        }
+        nav ul li {
+            margin-bottom: 2em; /* aggiunge spazio verticale tra le righe di icone */
+        }
+        nav ul li div {
+            font-size: 0.8em !important; /* didascalie più piccole */
+        }
+    }
+</style>
 </head>
 <body class="is-preload">
 <div id="wrapper">
@@ -20,32 +40,32 @@
             <!-- Sezione icone principali con didascalie sotto -->
             <div style="text-align: center; margin-top: 2em;">
                 <nav>
-    <ul style="display: flex; justify-content: center; gap: 4em; list-style: none; padding: 0;">
-        <!-- Nuova icona Home -->
-        <li style="display: flex; flex-direction: column; align-items: center;">
-            <a href="index.html" class="icon solid fa-home" style="font-size: 1.5em;"></a>
-            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Home</div>
-        </li>
-        <!-- Icone Ricerca -->
-        <li style="display: flex; flex-direction: column; align-items: center;">
-            <a href="pubblicazioni.html" class="icon solid fa-book" style="font-size: 1.5em;"></a>
-            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Pubblicazioni Scientifiche</div>
-        </li>
-        <li style="display: flex; flex-direction: column; align-items: center;">
-            <a href="#" class="icon solid fa-heartbeat" style="font-size: 1.5em;"></a>
-            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Ricerca Cardiovascolare</div>
-        </li>
-        <li style="display: flex; flex-direction: column; align-items: center;">
-            <a href="#" class="icon solid fa-brain" style="font-size: 1.5em;"></a>
-            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">AI Bioingegneria</div>
-        </li>
-        <li style="display: flex; flex-direction: column; align-items: center;">
-            <a href="#" class="icon solid fa-laptop-code" style="font-size: 1.5em;"></a>
-            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Progetti e Web App</div>
-        </li>
-    </ul>
-</nav>
-</div> 
+                    <ul style="display: flex; justify-content: center; gap: 4em; list-style: none; padding: 0;">
+                        <!-- Nuova icona Home -->
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="index.html" class="icon solid fa-home" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Home</div>
+                        </li>
+                        <!-- Icone Ricerca -->
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="pubblicazioni.html" class="icon solid fa-book" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Pubblicazioni Scientifiche</div>
+                        </li>
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="#" class="icon solid fa-heartbeat" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Ricerca Cardiovascolare</div>
+                        </li>
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="#" class="icon solid fa-brain" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">AI Bioingegneria</div>
+                        </li>
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="#" class="icon solid fa-laptop-code" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Progetti e Web App</div>
+                        </li>
+                    </ul>
+                </nav>
+            </div> 
         </header>
 
         <!-- Contenuto principale -->
