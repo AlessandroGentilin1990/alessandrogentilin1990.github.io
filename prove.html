@@ -8,20 +8,24 @@
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
     <!-- Stile responsive per le icone principali -->
-    <style>
-        @media (max-width: 600px) {
-            nav ul li a {
-                font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
-            }
-            nav ul {
-                gap: 1em !important; /* spazio ridotto tra le icone */
-                flex-wrap: wrap; /* permette alle icone di andare a capo se necessario */
-            }
-            nav ul li div {
-                font-size: 0.8em !important; /* didascalie più piccole */
-            }
+<style>
+    @media (max-width: 600px) {
+        nav ul li a {
+            font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
         }
-    </style>
+        nav ul {
+            gap: 1em !important; /* spazio ridotto tra le icone */
+            flex-wrap: wrap; /* permette alle icone di andare a capo se necessario */
+            justify-content: center;
+        }
+        nav ul li {
+            margin-bottom: 1em; /* aggiunge spazio verticale tra le righe di icone */
+        }
+        nav ul li div {
+            font-size: 0.8em !important; /* didascalie più piccole */
+        }
+    }
+</style>
 </head>
 <body class="is-preload">
 <div id="wrapper">
