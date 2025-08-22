@@ -1,91 +1,312 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="it">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ricerca - Gentilin Lab</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-
-    <!-- Stile responsive per le icone principali -->
-<style>
-    @media (max-width: 600px) {
-        nav ul li a {
-            font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Stile originale della pagina pubblicazioni */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        nav ul {
-            gap: 1em !important; /* spazio ridotto tra le icone */
-            flex-wrap: wrap; /* permette alle icone di andare a capo se necessario */
+        
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        body {
+            background: #1c1d26;
+            color: #fff;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 17pt;
+            font-weight: 300;
+            letter-spacing: 0.025em;
+            line-height: 1.75;
+        }
+        
+        #wrapper {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        #bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1c1d26;
+            background-image: linear-gradient(45deg, #2c3e50 0%, #1c1d26 100%);
+            z-index: 1;
+        }
+        
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        
+        #main {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
+            padding: 2rem;
         }
-        nav ul li {
-            margin-bottom: 2em; /* aggiunge spazio verticale tra le righe di icone */
+        
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
         }
-        nav ul li div {
-            font-size: 0.8em !important; /* didascalie più piccole */
+        
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            letter-spacing: 2px;
         }
-    }
-</style>
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: #6ab1e7;
+            text-align: center;
+        }
+        
+        h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: #6ab1e7;
+            border-bottom: 2px solid #6ab1e7;
+            padding-bottom: 0.5rem;
+        }
+        
+        /* Layout a tre colonne */
+        .research-container {
+            display: flex;
+            width: 90%;
+            max-width: 1200px;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .column {
+            flex: 1;
+            background: rgba(25, 45, 65, 0.8);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow-y: auto;
+            max-height: 60vh;
+        }
+        
+        .vertical-divider {
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, #6ab1e7, transparent);
+            margin: 0 1rem;
+        }
+        
+        .techniques-list {
+            list-style-type: none;
+            text-align: left;
+        }
+        
+        .techniques-list li {
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: rgba(106, 177, 231, 0.1);
+            border-left: 3px solid #6ab1e7;
+            border-radius: 0 5px 5px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .techniques-list li:hover {
+            transform: translateX(5px);
+            background: rgba(106, 177, 231, 0.2);
+        }
+        
+        .techniques-list i {
+            margin-right: 10px;
+            color: #6ab1e7;
+        }
+        
+        .research-content p {
+            line-height: 1.6;
+            margin-bottom: 1.2rem;
+        }
+        
+        .research-highlights {
+            margin-top: 2rem;
+        }
+        
+        .research-highlights li {
+            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .research-highlights li:before {
+            content: "•";
+            color: #6ab1e7;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Personalizzazione della scrollbar */
+        .column::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        .column::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        
+        .column::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
+        }
+        
+        .column::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        @media (max-width: 900px) {
+            .research-container {
+                flex-direction: column;
+            }
+            
+            .vertical-divider {
+                width: 100%;
+                height: 2px;
+                background: linear-gradient(to right, transparent, #6ab1e7, transparent);
+                margin: 1rem 0;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
 <body class="is-preload">
-<div id="wrapper">
-    <div id="bg"></div>
-    <div id="overlay"></div>
-    <div id="main">
-
-        <!-- Header -->
-        <header id="header" style="text-align: center;">
-            <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
-
-            <!-- Sezione icone principali con didascalie sotto -->
-            <div style="text-align: center; margin-top: 2em;">
-                <nav>
-                    <ul style="display: flex; justify-content: center; gap: 4em; list-style: none; padding: 0;">
-                        <!-- Nuova icona Home -->
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="index.html" class="icon solid fa-home" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Home</div>
-                        </li>
-                        <!-- Icone Ricerca -->
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="pubblicazioni.html" class="icon solid fa-book" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Pubblicazioni Scientifiche</div>
-                        </li>
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="#" class="icon solid fa-heartbeat" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Ricerca Cardiovascolare</div>
-                        </li>
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="#" class="icon solid fa-brain" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">AI Bioingegneria</div>
-                        </li>
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="#" class="icon solid fa-laptop-code" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Progetti e Web App</div>
-                        </li>
+    <div id="wrapper">
+        <div id="bg"></div>
+        <div id="overlay"></div>
+        <div id="main">
+            <!-- Header -->
+            <header>
+                <h1>GENTILIN LAB</h1>
+                <h2>Ricerca Scientifica</h2>
+            </header>
+            
+            <!-- Contenuto principale -->
+            <div class="research-container">
+                <!-- Colonna 1: Tecniche Utilizzate -->
+                <div class="column">
+                    <h3>Tecniche Utilizzate</h3>
+                    <ul class="techniques-list">
+                        <li><i class="fas fa-heartbeat"></i> Ecocardiografia Doppler</li>
+                        <li><i class="fas fa-wave-square"></i> Ecografia Doppler vascolare</li>
+                        <li><i class="fas fa-tint"></i> Fotopletismografia</li>
+                        <li><i class="fas fa-lungs"></i> Valutazione cardiorespiratoria</li>
+                        <li><i class="fas fa-tachometer-alt"></i> Valutazione dell'emodinamica centrale</li>
+                        <li><i class="fas fa-arrows-alt-h"></i> Misurazione della rigidità arteriosa e aortica</li>
+                        <li><i class="fas fa-lightbulb"></i> Spettroscopia nel vicino infrarosso</li>
+                        <li><i class="fas fa-redo"></i> Analisi delle riflessioni cardiocircolatorie</li>
+                        <li><i class="fas fa-wind"></i> Funzionalità respiratoria</li>
+                        <li><i class="fas fa-heart"></i> Analisi ECG, PPG, EMG</li>
+                        <li><i class="fas fa-vial"></i> Misura della funzione endoteliale</li>
                     </ul>
-                </nav>
-            </div> 
-        </header>
-
-        <!-- Contenuto principale -->
-        <section id="content" style="text-align: center; margin-top: 2em;">
-            <h2>Ricerca Scientifica</h2>
-            <p>Qui puoi inserire i contenuti della sezione Ricerca Scientifica.</p>
-        </section>
-
-        <!-- Footer -->
-        <footer id="footer" style="text-align: center; margin-top: 3em;">
-            <span class="copyright">&copy; Dev. by Alessandro Gentilin.</span>
-        </footer>
-
+                </div>
+                
+                <!-- Divisore verticale 1 -->
+                <div class="vertical-divider"></div>
+                
+                <!-- Colonna 2: Attività di ricerca -->
+                <div class="column">
+                    <h3>Attività di Ricerca</h3>
+                    <div class="research-content">
+                        <p>Il nostro laboratorio si concentra sullo studio delle funzioni cardiovascolari e respiratorie attraverso tecniche all'avanguardia e approcci integrati.</p>
+                        <p>La nostra ricerca combina metodologie non invasive con modelli computazionali avanzati per comprendere i meccanismi fisiopatologici alla base delle malattie cardiovascolari.</p>
+                        <p>Collaboriamo con istituzioni nazionali e internazionali per sviluppare nuove tecnologie diagnostiche e terapeutiche.</p>
+                    </div>
+                    
+                    <div class="research-highlights">
+                        <h3>Pubblicazioni Recenti</h3>
+                        <ul>
+                            <li>Analisi della variabilità cardiaca in atleti d'élite</li>
+                            <li>Nuove tecniche di imaging per la valutazione endoteliale</li>
+                            <li>Modelli predittivi per malattie cardiovascolari</li>
+                            <li>Effetti dell'allenamento ad alta quota sul sistema cardiovascolare</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Divisore verticale 2 -->
+                <div class="vertical-divider"></div>
+                
+                <!-- Colonna 3: Progetti e Collaborazioni -->
+                <div class="column">
+                    <h3>Progetti in Corso</h3>
+                    <div class="research-content">
+                        <p>Attualmente stiamo lavorando su diversi progetti di ricerca:</p>
+                        <ul class="research-highlights">
+                            <li>Sviluppo di un sistema integrato per il monitoraggio cardiovascolare continuo</li>
+                            <li>Studio degli effetti dell'inquinamento atmosferico sulla funzione vascolare</li>
+                            <li>Analisi dell'impatto dello stress ossidativo sul sistema cardiocircolatorio</li>
+                            <li>Validazione di nuove tecniche di imaging non invasive</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Collaborazioni</h3>
+                    <div class="research-content">
+                        <p>Lavoriamo con importanti istituzioni tra cui:</p>
+                        <ul class="research-highlights">
+                            <li>Università di Padova</li>
+                            <li>Istituto di Fisiologia Clinica del CNR</li>
+                            <li>Oxford University</li>
+                            <li>Harvard Medical School</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer -->
+            <footer>
+                <span class="copyright">&copy; 2023 Dev. by Alessandro Gentilin.</span>
+            </footer>
+        </div>
     </div>
-</div>
 
-<script>
-    window.onload = function() { document.body.classList.remove('is-preload'); }
-    window.ontouchmove = function() { return false; }
-    window.onorientationchange = function() { document.body.scrollTop = 0; }
-</script>
+    <script>
+        // Rimuove la classe is-preload dopo il caricamento della pagina
+        window.addEventListener('load', function() {
+            document.body.classList.remove('is-preload');
+        });
+    </script>
 </body>
 </html>
