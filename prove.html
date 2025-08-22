@@ -1,159 +1,87 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Gentilin Lab</title>
+    <title>Ricerca - Gentilin Lab</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
+    <!-- Stile responsive per le icone principali -->
     <style>
-        /* Stile per garantire lo scroll su mobile */
-        html, body {
-            overflow-x: hidden;
-            overflow-y: auto;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-        
-        #wrapper {
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 0;
-        }
-        
-        #main {
-            width: 100%;
-            max-width: 100%;
-        }
-        
-        /* Header più compatto su mobile */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.2em !important;
-            }
-            
-            h2 {
-                font-size: 1.4em !important;
-            }
-            
-            p {
-                font-size: 1em !important;
-                padding: 0 1rem;
-            }
-        }
-        
-        /* Riduzione dimensioni icone e spazi su schermi piccoli */
         @media (max-width: 600px) {
-            nav ul {
-                gap: 1.5em !important;
-            }
-            
             nav ul li a {
-                font-size: 1.2em !important;
+                font-size: 1.2em !important; /* icone più piccole su schermi piccoli */
             }
-            
-            .icon-label {
-                font-size: 0.9em !important;
+            nav ul {
+                gap: 1em !important; /* spazio ridotto tra le icone */
+                flex-wrap: wrap; /* permette alle icone di andare a capo se necessario */
             }
-            
-            /* Layout a colonna per icone principali su schermi molto piccoli */
-            @media (max-width: 400px) {
-                .main-icons {
-                    flex-direction: column !important;
-                    gap: 2em !important;
-                }
+            nav ul li div {
+                font-size: 0.8em !important; /* didascalie più piccole */
             }
-        }
-        
-        /* Separatore più sottile su mobile */
-        @media (max-width: 600px) {
-            hr {
-                margin: 4em auto 2em auto !important;
-                width: 70% !important;
-            }
-        }
-        
-        /* Social icons wrap su schermi piccoli */
-        .social-icons {
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .social-icons li {
-            margin: 0.5em;
         }
     </style>
 </head>
 <body class="is-preload">
-    <div id="wrapper">
-        <div id="bg"></div>
-        <div id="overlay"></div>
-        <div id="main">
+<div id="wrapper">
+    <div id="bg"></div>
+    <div id="overlay"></div>
+    <div id="main">
 
-            <!-- Header -->
-            <header id="header" style="text-align: center;">
-                <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
-                <h2 style="font-size: 1.8em; font-weight: normal; margin-top: 0.2em; margin-bottom: 0.5em;">
-                    by Alessandro Gentilin PhD
-                </h2>
-                <p style="font-size: 1.2em; margin-top: 0.5em;">
-                    Electronics, Software, Data Science, Statistics, AI & Algorithms for Industrial, Medical, and Sports Applications
-                </p>
+        <!-- Header -->
+        <header id="header" style="text-align: center;">
+            <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
 
-                <!-- Tre icone principali con didascalia sotto -->
-                <div style="text-align: center; margin-top: 2em;">
-                    <nav>
-                        <ul class="main-icons" style="display: flex; justify-content: center; gap: 5em; flex-wrap: wrap; list-style: none; padding: 0;">
-                            <li style="display: flex; flex-direction: column; align-items: center;">
-                                <a href="ricerca.html" class="icon solid fa-flask" style="font-size: 1.5em;"></a>
-                                <div class="icon-label" style="margin-top: 0.5em; font-size: 1em; text-align: center;">Ricerca</div>
-                            </li>
-                            <li style="display: flex; flex-direction: column; align-items: center;">
-                                <a href="scuola.html" class="icon solid fa-graduation-cap" style="font-size: 1.5em;"></a>
-                                <div class="icon-label" style="margin-top: 0.5em; font-size: 1em; text-align: center;">Scuola</div>
-                            </li>
-                            <li style="display: flex; flex-direction: column; align-items: center;">
-                                <a href="progetti.html" class="icon solid fa-lightbulb" style="font-size: 1.5em;"></a>
-                                <div class="icon-label" style="margin-top: 0.5em; font-size: 1em; text-align: center;">Progetti</div>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-
-                <!-- Linea orizzontale bianca con margine superiore ancora maggiore -->
-                <hr style="border: 1px solid white; width: 50%; margin: 7em auto 2em auto;" />
-
-                <!-- Sette icone social con margine superiore maggiore -->
+            <!-- Sezione icone principali con didascalie sotto -->
+            <div style="text-align: center; margin-top: 2em;">
                 <nav>
-                    <ul class="social-icons" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 2em; list-style: none; padding: 0; margin-top: 2em;">
-                        <li><a href="https://www.linkedin.com/in/alessandrogentilin90/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-                        <li><a href="https://www.instagram.com/gentilinlab/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-                        <li><a href="https://www.youtube.com/@GentilinLab" class="icon brands fa-youtube"><span class="label">YouTube</span></a></li>
-                        <li><a href="https://www.facebook.com/profile.php?id=61579785837712" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-                        <li><a href="https://pubmed.ncbi.nlm.nih.gov/?sort=date&term=Gentilin+A&cauthor_id=40415541" class="icon solid fa-book"><span class="label">PubMed</span></a></li>
-                        <li><a href="https://www.researchgate.net/profile/Alessandro-Gentilin?ev=hdr_xprf" class="icon brands fa-researchgate"><span class="label">ResearchGate</span></a></li>
-                        <li><a href="mailto:gentilin@cfptrissino.it?subject=Richiesta%20informazioni%20da%20sito%20web" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                    <ul style="display: flex; justify-content: center; gap: 4em; list-style: none; padding: 0;">
+                        <!-- Nuova icona Home -->
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="index.html" class="icon solid fa-home" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Home</div>
+                        </li>
+                        <!-- Icone Ricerca -->
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="pubblicazioni.html" class="icon solid fa-book" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Pubblicazioni Scientifiche</div>
+                        </li>
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="#" class="icon solid fa-heartbeat" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Ricerca Cardiovascolare</div>
+                        </li>
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="#" class="icon solid fa-brain" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">AI Bioingegneria</div>
+                        </li>
+                        <li style="display: flex; flex-direction: column; align-items: center;">
+                            <a href="#" class="icon solid fa-laptop-code" style="font-size: 1.5em;"></a>
+                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Progetti e Web App</div>
+                        </li>
                     </ul>
                 </nav>
+            </div> 
+        </header>
 
-            </header>
+        <!-- Contenuto principale -->
+        <section id="content" style="text-align: center; margin-top: 2em;">
+            <h2>Ricerca Scientifica</h2>
+            <p>Qui puoi inserire i contenuti della sezione Ricerca Scientifica.</p>
+        </section>
 
-            <!-- Footer -->
-            <footer id="footer">
-                <span class="copyright">&copy; Dev. by Alessandro Gentilin.</span>
-            </footer>
+        <!-- Footer -->
+        <footer id="footer" style="text-align: center; margin-top: 3em;">
+            <span class="copyright">&copy; Dev. by Alessandro Gentilin.</span>
+        </footer>
 
-        </div>
     </div>
+</div>
 
-    <script>
-        window.onload = function() { document.body.classList.remove('is-preload'); }
-        window.ontouchmove = function() { return false; }
-        window.onorientationchange = function() { document.body.scrollTop = 0; }
-    </script>
+<script>
+    window.onload = function() { document.body.classList.remove('is-preload'); }
+    window.ontouchmove = function() { return false; }
+    window.onorientationchange = function() { document.body.scrollTop = 0; }
+</script>
 </body>
 </html>
