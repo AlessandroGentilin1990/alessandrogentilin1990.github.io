@@ -128,22 +128,34 @@
             margin-bottom: 15px;
         }
         
-        /* Responsive design per schermi piccoli */
-        @media (max-width: 768px) {
-    /* Imposta altezza massima più bassa per ogni colonna su mobile */
+<!-- Responsive design per schermi piccoli -->
+<style>
+@media (max-width: 768px) {
+    .three-columns {
+        flex-direction: column; /* colonne impilate */
+    }
+
+    .column {
+        margin: 15px 0;
+        max-height: 40vh;      /* altezza limitata su mobile */
+        overflow-y: auto;      /* permette lo scroll dentro la colonna */
+    }
+
     .techniques-container,
     .projects-container,
     .pubblicazioni-container {
-        max-height: 30vh;   /* altezza più piccola per far vedere tutte le colonne impilate */
-        overflow-y: auto;   /* mantiene lo scroll interno */
+        max-height: 100%;      /* usa tutta l’altezza della colonna */
+        overflow-y: auto;      /* mantiene lo scroll interno */
+    }
+
+    .separator {
+        display: none;
     }
 }
-            
-            .separator {
-                display: none;
-            }
-        }
-    </style>
+</style>
+
+
+
 </head>
 <body class="is-preload">
 <div id="wrapper">
