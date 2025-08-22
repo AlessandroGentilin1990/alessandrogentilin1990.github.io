@@ -130,13 +130,14 @@
         
         /* Responsive design per schermi piccoli */
         @media (max-width: 768px) {
-            .three-columns {
-                flex-direction: column;
-            }
-            
-            .column {
-                margin: 15px 0;
-            }
+    /* Imposta altezza massima più bassa per ogni colonna su mobile */
+    .techniques-container,
+    .projects-container,
+    .pubblicazioni-container {
+        max-height: 30vh;   /* altezza più piccola per far vedere tutte le colonne impilate */
+        overflow-y: auto;   /* mantiene lo scroll interno */
+    }
+}
             
             .separator {
                 display: none;
