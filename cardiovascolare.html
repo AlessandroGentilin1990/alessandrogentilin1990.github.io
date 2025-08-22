@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <html>
 <head>
     <title>Cardiovascolare - Gentilin Lab</title>
@@ -127,38 +128,21 @@
             margin-bottom: 15px;
         }
         
-<!-- Responsive design per schermi piccoli -->
-<style>
-@media (max-width: 768px) {
-    .three-columns {
-        flex-direction: column !important; /* colonne impilate verticalmente */
-    }
-
-    .column {
-        width: 100% !important;   /* larghezza piena */
-        margin: 10px 0;
-        height: 30vh;             /* altezza ridotta per vedere tutte le colonne */
-        overflow-y: auto;         /* scroll interno abilitato */
-    }
-
-    .techniques-container,
-    .projects-container,
-    .pubblicazioni-container {
-        max-height: 100%;         /* usa tutta l’altezza della colonna */
-        overflow-y: auto;
-    }
-
-    .separator {
-        display: none !important; /* nasconde i separatori anche se sono position absolute */
-    }
-}
-</style>
-
-
-
-
-
-
+        /* Responsive design per schermi piccoli */
+        @media (max-width: 768px) {
+            .three-columns {
+                flex-direction: column;
+            }
+            
+            .column {
+                margin: 15px 0;
+            }
+            
+            .separator {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body class="is-preload">
 <div id="wrapper">
@@ -181,7 +165,7 @@
                 <div class="separator left"></div>
                 <div class="separator right"></div>
                 
-                <!-- Colonna sinistra: Tecniche Utilizzates -->
+                <!-- Colonna sinistra: Tecniche Utilizzate -->
                 <div class="column">
                     <h3>Tecniche Utilizzate</h3>
                     <div class="techniques-container">
@@ -295,9 +279,8 @@
 
 <script>
     window.onload = function() { document.body.classList.remove('is-preload'); }
+    window.ontouchmove = function() { return false; }
     window.onorientationchange = function() { document.body.scrollTop = 0; }
 </script>
-
-
 </body>
 </html>
