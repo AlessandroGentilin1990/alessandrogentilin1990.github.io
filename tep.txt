@@ -1,0 +1,27 @@
+
+<!-- Colonna centrale: Progetti -->
+<div class="column">
+    <h3>Progetti</h3>
+
+    <!-- Contenitore scrollabile che include testo introduttivo e progetti -->
+    <div class="projects-container" style="max-height: 400px; overflow-y: auto; padding-right: 0.5em;">
+
+        <!-- Testo introduttivo -->
+        <p style="margin-top: -0.5em; font-size: 1.0em; text-align: justify; line-height: 1.6; text-justify: inter-word;">
+            Le ricerche si concentrano sul controllo neurale del sistema cardiovascolare in risposta a stress ambientali, esercizio, invecchiamento, differenze di sesso e ritmi circadiani, con particolare attenzione a rigidità aortica e regolazione vascolare. Gli studi coinvolgono diverse popolazioni, dai giovani sani agli anziani con patologie croniche, utilizzando esercizio fisico e stress non invasivi come strumenti di indagine. Parallelamente, il laboratorio sviluppa tecnologie biomediche e algoritmi basati su intelligenza artificiale per l’analisi di segnali fisiologici e dati da dispositivi indossabili, con l’obiettivo di predizione del rischio e diagnosi precoce. Inoltre, vengono realizzati software e applicazioni per automatizzare l’elaborazione di grandi dataset biomedici, analizzare segnali e immagini e rendere più efficiente il processo di ricerca.
+        </p>
+
+        <!-- Progetti in box stile colonna sinistra -->
+        <div class="techniques-container">
+            <ul class="techniques-list">
+                <li><i class="fas fa-heartbeat"></i> Effetti diabete e ipertensione: su regolazione neurovegetativa cardiovascolare, cuore e arterie, accoppiamento cuore-aorta</li>
+                <li><i class="fas fa-wave-square"></i> Identificazione biomarkers: diabete tipo 2 e ipertensione su segnali fisiologici (ECG, PPG)</li>
+                <li><i class="fas fa-tint"></i> Monitoraggio cardiovascolare continuo: sviluppo di sistemi e algoritmi AI integrati</li>
+                <li><i class="fas fa-lungs"></i> Screening cardiovascolare: algoritmi AI per identificazione precoce di diabete tipo 2 e ipertensione</li>
+                <li><i class="fas fa-tachometer-alt"></i> Scompenso cardiaco: algoritmi AI per identificazione precoce, prognosi e stadiazione dello scompenso a frazione di eiezione preservata</li>
+                <li><i class="fas fa-arrows-alt-h"></i> Software biomedicali: sviluppo di applicazioni per processamento dati ecografici</li>
+            </ul>
+        </div>
+
+    </div>
+</div> 
