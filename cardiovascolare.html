@@ -132,28 +132,29 @@
 <style>
 @media (max-width: 768px) {
     .three-columns {
-        flex-direction: column; /* colonne impilate verticalmente */
+        flex-direction: column !important; /* colonne impilate verticalmente */
     }
 
     .column {
-        width: 100% !important;  /* forza larghezza piena su mobile */
+        width: 100% !important;   /* larghezza piena */
         margin: 10px 0;
-        height: 30vh;            /* altezza ridotta per vedere tutte le colonne */
-        overflow-y: auto;        /* permette scroll interno */
+        height: 30vh;             /* altezza ridotta per vedere tutte le colonne */
+        overflow-y: auto;         /* scroll interno abilitato */
     }
 
     .techniques-container,
     .projects-container,
     .pubblicazioni-container {
-        max-height: 100%;
+        max-height: 100%;         /* usa tutta l’altezza della colonna */
         overflow-y: auto;
     }
 
     .separator {
-        display: none;           /* nasconde i separatori */
+        display: none !important; /* nasconde i separatori anche se sono position absolute */
     }
 }
 </style>
+
 
 
 
