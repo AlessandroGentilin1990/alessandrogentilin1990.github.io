@@ -13,23 +13,39 @@
     <div id="overlay"></div>
     <div id="main">
 
-        <!-- Header identico alla home -->
+        <!-- Header -->
         <header id="header" style="text-align: center;">
             <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
-            <h2 style="font-size: 1.8em; font-weight: normal; margin-top: 0.2em; margin-bottom: 0.5em;">
-                by Alessandro Gentilin PhD
-            </h2>
-            <p style="font-size: 1.2em; margin-top: 0.5em;">
-                Electronics, Software, Data Science, Statistics, AI & Algorithms for Industrial, Medical, and Sports Applications
-            </p>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="icon solid fa-home"><span class="label">Home</span></a></li>
-                    <li><a href="ricerca.html" class="icon solid fa-flask"><span class="label">Ricerca</span></a></li>
-                    <li><a href="scuola.html" class="icon solid fa-graduation-cap"><span class="label">Scuola</span></a></li>
-                    <li><a href="progetti.html" class="icon solid fa-lightbulb"><span class="label">Progetti</span></a></li>
-                </ul>
-            </nav>
+
+            <!-- Sezione icone principali con didascalie sotto -->
+            <div style="text-align: center; margin-top: 2em;">
+                <nav>
+    <ul style="display: flex; justify-content: center; gap: 4em; list-style: none; padding: 0;">
+        <!-- Nuova icona Home -->
+        <li style="display: flex; flex-direction: column; align-items: center;">
+            <a href="index.html" class="icon solid fa-home" style="font-size: 1.5em;"></a>
+            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Home</div>
+        </li>
+        <!-- Icone Ricerca -->
+        <li style="display: flex; flex-direction: column; align-items: center;">
+            <a href="pubblicazioni.html" class="icon solid fa-book" style="font-size: 1.5em;"></a>
+            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Pubblicazioni Scientifiche</div>
+        </li>
+        <li style="display: flex; flex-direction: column; align-items: center;">
+            <a href="#" class="icon solid fa-heartbeat" style="font-size: 1.5em;"></a>
+            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Ricerca Cardiovascolare</div>
+        </li>
+        <li style="display: flex; flex-direction: column; align-items: center;">
+            <a href="#" class="icon solid fa-brain" style="font-size: 1.5em;"></a>
+            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">AI Bioingegneria</div>
+        </li>
+        <li style="display: flex; flex-direction: column; align-items: center;">
+            <a href="#" class="icon solid fa-laptop-code" style="font-size: 1.5em;"></a>
+            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Progetti e Web App</div>
+        </li>
+    </ul>
+</nav>
+</div> 
         </header>
 
         <!-- Contenuto principale -->
@@ -39,7 +55,7 @@
         </section>
 
         <!-- Footer -->
-        <footer id="footer">
+        <footer id="footer" style="text-align: center; margin-top: 3em;">
             <span class="copyright">&copy; Dev. by Alessandro Gentilin.</span>
         </footer>
 
