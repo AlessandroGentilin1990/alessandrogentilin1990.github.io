@@ -10,7 +10,7 @@
     <style>
         /* Stile aggiuntivo per abilitare lo scrolling */
         .pubblicazioni-container {
-            max-height: 15vh; 
+            max-height: 50vh; 
             overflow-y: auto; /* Abilita lo scrolling verticale */
             margin: 1em auto; /*1em auto; */
             padding: 0 1em;
@@ -18,7 +18,7 @@
         }
         
         .techniques-container {
-            max-height: 15vh; 
+            max-height: 50vh; 
             overflow-y: auto; /* Abilita lo scrolling verticale */
             margin: 1em auto; /*1em auto; */
             padding: 0 1em;
@@ -128,6 +128,11 @@
         }
         
         /* Responsive design per schermi piccoli */
+
+
+
+
+
         @media (max-width: 768px) {
             .three-columns {
                 flex-direction: column;
@@ -142,6 +147,18 @@
             .separator {
                 display: none;
             }
+
+/* Modifica max-height per contenitori scrollabili sui piccoli schermi */
+    .pubblicazioni-container,
+    .techniques-container {
+        max-height: 15vh;
+    }
+
+    .projects-container {
+        max-height: 150px !important;
+    }
+
+
         }
     </style>
 </head>
