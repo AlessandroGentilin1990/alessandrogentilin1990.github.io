@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+
 <html>
 <head>
     <title>Pubblicazioni - Gentilin Lab</title>
@@ -7,88 +8,42 @@
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
     <style>
-        /* Stile per lo sfondo fisso e scroll del contenuto */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Disabilita lo scroll globale */
+        /* Stile aggiuntivo per abilitare lo scrolling */
+        #pubblicazioni-container {
+            max-height: 50vh; /* Altezza massima del 60% della viewport */
+            overflow-y: auto; /* Abilita lo scrolling verticale */
+            margin: 1em auto 4em; /*1em auto; */
+            padding: 0 1em;
+            text-align: left;
         }
         
-        #wrapper {
-            height: 100%;
-            position: relative;
-            overflow: hidden;
+        /* Personalizzazione della scrollbar */
+        #pubblicazioni-container::-webkit-scrollbar {
+            width: 8px;
         }
         
-        #bg, #overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
+        #pubblicazioni-container::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
         }
         
-        #main {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 10;
-            overflow-y: auto; /* Abilita scroll verticale solo per il contenuto */
-            -webkit-overflow-scrolling: touch; /* Scroll fluido su dispositivi touch */
+        #pubblicazioni-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 10px;
         }
         
-        /* Stile per la lista delle pubblicazioni */
+        #pubblicazioni-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Miglioramenti per la leggibilità */
         #pubblicazioni {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding-left: 1.5em;
         }
         
         #pubblicazioni li {
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        #pubblicazioni a {
-            color: #2c3e50;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        #pubblicazioni a:hover {
-            color: #3498db;
-            text-decoration: underline;
-        }
-        
-        /* Stile per il footer */
-        #footer {
-            text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-        }
-        
-        /* Responsive design */
-        @media (max-width: 768px) {
-            #pubblicazioni {
-                margin: 0 15px;
-                padding: 15px;
-            }
-            
-            nav ul {
-                gap: 2em !important;
-                flex-wrap: wrap;
-            }
-            
-            nav ul li {
-                margin-bottom: 1.5em;
-            }
+            margin-bottom: 0.8em;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -102,70 +57,41 @@
         <header id="header" style="text-align: center;">
             <h1 style="font-size: 3em; margin-bottom: 0.2em;">GENTILIN LAB</h1>
 
-            <!-- Sezione icone principali con didascalie sotto -->
-            <div style="text-align: center; margin-top: 2em;">
-                <nav>
-                    <ul style="display: flex; justify-content: center; gap: 4em; list-style: none; padding: 0;">
-                        <!-- Nuova icona Home -->
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="index.html" class="icon solid fa-home" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Home</div>
-                        </li>
-                        <!-- Icone Ricerca -->
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="pubblicazioni.html" class="icon solid fa-book" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Pubblicazioni Scientifiche</div>
-                        </li>
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="#" class="icon solid fa-heartbeat" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Ricerca Cardiovascolare</div>
-                        </li>
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="#" class="icon solid fa-brain" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">AI Bioingegneria</div>
-                        </li>
-                        <li style="display: flex; flex-direction: column; align-items: center;">
-                            <a href="#" class="icon solid fa-laptop-code" style="font-size: 1.5em;"></a>
-                            <div style="margin-top: 0.1em; font-size: 0.9em; line-height: 1.1em; text-align: center;">Progetti e Web App</div>
-                        </li>
-                    </ul>
-                </nav>
-            </div> 
-        </header>
-
-        <!-- Contenuto principale - Elenco pubblicazioni -->
-        <section id="content" style="text-align: center; margin: 2em auto; max-width: 900px;">
+            <!-- Contenuto principale - Elenco pubblicazioni -->
+        <section id="content" style="text-align: center; margin: 2em auto 4em; max-width: 900px;">
             <h2>Pubblicazioni Scientifiche</h2>
             
-            <ol id="pubblicazioni">
-                <li><a href="https://doi.org/10.1080/03091902.2025.2506419" target="_blank">Gentilin A. Comparison of seven machine learning models in hypertension classification using photoplethysmographic and anthropometric data.</a></li>
-                <li><a href="https://doi.org/10.1016/j.physbeh.2024.114755" target="_blank">Gentilin A, Rakobowchuk M, Mourot L. Sex-specific responses of central artery stiffness to cold pressor test-mediated sympathetic activation.</a></li>
-                <li><a href="#" target="_blank">Gentilin A and Cevese A. PPGAI index as a photoplethysmographic biomarker for type 2 diabetes mellitus.</a></li>
-                <li><a href="https://doi.org/10.1515/jbcpp-2024-0014" target="_blank">Gentilin A. The pitfalls of linear regression in physiological research.</a></li>
-                <li><a href="https://doi.org/10.1002/jum.16553" target="_blank">Tecchio P, Gentilin A. TG Vascutrack: software for automated extraction of arterial diameter and velocity profile data.</a></li>
-                <li><a href="https://doi.org/10.1177/09544119241272833" target="_blank">Gentilin A. Open-source synthetic photoplethysmographic signal generator with analog output.</a></li>
-                <li><a href="https://doi.org/10.1051/sm/2024013" target="_blank">Gentilin A. Identifying the optimal workload combination for maximizing oxygen consumption estimation in submaximal tests.</a></li>
-                <li><a href="https://doi.org/10.23736/S0022-4707.23.15330-8" target="_blank">Gentilin A, Cevese A, Tam E. Postexercise cardiovascular hemodynamics assessment before and after a 30-minute standing still recovery.</a></li>
-                <li><a href="https://doi.org/10.1177/17543371231213904" target="_blank">Gentilin A. The informative power of heart rate along with machine learning regression models to predict maximal oxygen consumption and maximal workload capacity.</a></li>
-                <li><a href="https://doi.org/10.1177/17085381231194145" target="_blank">Gentilin A. Challenges in normalizing pulse wave velocity scores: Implications for assessing central artery stiffness.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Moghetti P, Cevese A, et al. Circadian and sex differences in carotid-femoral pulse wave velocity in young individuals and elderly with and without type 2 diabetes.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Moghetti P, Cevese A, et al. Circadian variations in sympathetic vasoconstriction in older adults with and without type 2 diabetes.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Moghetti P, Cevese A, Mattioli AV, Schena F, Tarperi C. Circadian and sex differences in post-ischemic vasodilation and reactive hyperemia in young individuals and elderly with and without type 2 diabetes.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Tarperi C, Cevese A, et al. Estimation of carotid-femoral pulse wave velocity from finger photoplethysmography signal.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Moghetti P, Cevese A, et al. Sympathetic-mediated blunting of forearm vasodilation is similar between young men and women.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Cevese A, Schena F, et al. Mental stress augments central artery stiffness in young individuals of both sexes.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Tarperi C, Skroce K, et al. Effects of acute sympathetic activation on the central artery stiffness after strenuous endurance exercise.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Tarperi C, Skroce K, et al. Effect of acute sympathetic activation on leg vasodilation before and after endurance exercise.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Budel L, Cevese A, et al. Uphill versus downhill high-intensity training effectiveness in preserving vascular function and exercise performance in runners who reduce their regular endurance training.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Zanini P, Cevese A, et al. Ergogenic effects of citrulline supplementation on exercise performance e fisiological indexes during cycling tests: A review.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Tam E, Tarperi C, et al. Post-exercise upside-down recovery accelerates heart rate recovery but does not improve subsequent sprint performance.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Tecchio P, Cevese A, et al. Pedaling cadence variability increases by worsening the bike fitting across most but not all workloads.</a></li>
-                <li><a href="#" target="_blank">Gentilin A, Skroce K, Schena F, Tarperi C. Prolonged visual reaction time after strenuous endurance exercise: higher increment in male rispetto a female recreational runners.</a></li>
-            </ol>
+<div id="pubblicazioni-container">
+    <ol id="pubblicazioni">
+        <li><a href="https://doi.org/10.1080/03091902.2025.2506419" target="_blank"><span style="font-weight: normal;">Gentilin A.</span> <span style="font-weight: bold;">Comparison of seven machine learning models in hypertension classification using photoplethysmographic and anthropometric data.</span></a></li>
+        <li><a href="https://doi.org/10.1016/j.physbeh.2024.114755" target="_blank"><span style="font-weight: normal;">Gentilin A, Rakobowchuk M, Mourot L.</span> <span style="font-weight: bold;">Sex-specific responses of central artery stiffness to cold pressor test-mediated sympathetic activation.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931230_PPGAI_index_as_a_photoplethysmographic_biomarker_for_type_2_diabetes_mellitus" target="_blank"><span style="font-weight: normal;">Gentilin A and Cevese A.</span> <span style="font-weight: bold;">PPGAI index as a photoplethysmographic biomarker for type 2 diabetes mellitus.</span></a></li>
+        <li><a href="https://doi.org/10.1515/jbcpp-2024-0014" target="_blank"><span style="font-weight: normal;">Gentilin A.</span> <span style="font-weight: bold;">The pitfalls of linear regression in physiological research.</span></a></li>
+        <li><a href="https://doi.org/10.1002/jum.16553" target="_blank"><span style="font-weight: normal;">Tecchio P, Gentilin A.</span> <span style="font-weight: bold;">TG Vascutrack: software for automated extraction of arterial diameter and velocity profile data.</span></a></li>
+        <li><a href="https://doi.org/10.1177/09544119241272833" target="_blank"><span style="font-weight: normal;">Gentilin A.</span> <span style="font-weight: bold;">Open-source synthetic photoplethysmographic signal generator with analog output.</span></a></li>
+        <li><a href="https://doi.org/10.1051/sm/2024013" target="_blank"><span style="font-weight: normal;">Gentilin A.</span> <span style="font-weight: bold;">Identifying the optimal workload combination for maximizing oxygen consumption estimation in submaximal tests.</span></a></li>
+        <li><a href="https://doi.org/10.23736/S0022-4707.23.15330-8" target="_blank"><span style="font-weight: normal;">Gentilin A, Cevese A, Tam E.</span> <span style="font-weight: bold;">Postexercise cardiovascular hemodynamics assessment before and after a 30-minute standing still recovery.</span></a></li>
+        <li><a href="https://doi.org/10.1177/17543371231213904" target="_blank"><span style="font-weight: normal;">Gentilin A.</span> <span style="font-weight: bold;">The informative power of heart rate along with machine learning regression models to predict maximal oxygen consumption and maximal workload capacity.</span></a></li>
+        <li><a href="https://doi.org/10.1177/17085381231194145" target="_blank"><span style="font-weight: normal;">Gentilin A.</span> <span style="font-weight: bold;">Challenges in normalizing pulse wave velocity scores: Implications for assessing central artery stiffness.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931229_Circadian_and_sex_differences_in_carotid-femoral_pulse_wave_velocity_in_young_individuals_and_elderly_with_and_without_type_2_diabetes" target="_blank"><span style="font-weight: normal;">Gentilin A, Moghetti P, Cevese A, et al.</span> <span style="font-weight: bold;">Circadian and sex differences in carotid-femoral pulse wave velocity in young individuals and elderly with and without type 2 diabetes.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931228_Circadian_variations_in_sympathetic_vasoconstriction_in_older_adults_with_and_without_type_2_diabetes" target="_blank"><span style="font-weight: normal;">Gentilin A, Moghetti P, Cevese A, et al.</span> <span style="font-weight: bold;">Circadian variations in sympathetic vasoconstriction in older adults with and without type 2 diabetes.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931227_Circadian_and_sex_differences_in_post-ischemic_vasodilation_and_reactive_hyperemia_in_young_individuals_and_elderly_with_and_without_type_2_diabetes" target="_blank"><span style="font-weight: normal;">Gentilin A, Moghetti P, Cevese A, Mattioli AV, Schena F, Tarperi C.</span> <span style="font-weight: bold;">Circadian and sex differences in post-ischemic vasodilation and reactive hyperemia in young individuals and elderly with and without type 2 diabetes.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931226_Estimation_of_carotid-femoral_pulse_wave_velocity_from_finger_photoplethysmography_signal" target="_blank"><span style="font-weight: normal;">Gentilin A, Tarperi C, Cevese A, et al.</span> <span style="font-weight: bold;">Estimation of carotid-femoral pulse wave velocity from finger photoplethysmography signal.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931225_Sympathetic-mediated_blunting_of_forearm_vasodilation_is_similar_between_young_men_and_women" target="_blank"><span style="font-weight: normal;">Gentilin A, Moghetti P, Cevese A, et al.</span> <span style="font-weight: bold;">Sympathetic-mediated blunting of forearm vasodilation is similar between young men and women.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931224_Mental_stress_augments_central_artery_stiffness_in_young_individuals_of_both_sexes" target="_blank"><span style="font-weight: normal;">Gentilin A, Cevese A, Schena F, et al.</span> <span style="font-weight: bold;">Mental stress augments central artery stiffness in young individuals of both sexes.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931223_Effects_of_acute_sympathetic_activation_on_the_central_artery_stiffness_after_strenuous_endurance_exercise" target="_blank"><span style="font-weight: normal;">Gentilin A, Tarperi C, Skroce K, et al.</span> <span style="font-weight: bold;">Effects of acute sympathetic activation on the central artery stiffness after strenuous endurance exercise.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931222_Effect_of_acute_sympathetic_activation_on_leg_vasodilation_before_and_after_endurance_exercise" target="_blank"><span style="font-weight: normal;">Gentilin A, Tarperi C, Skroce K, et al.</span> <span style="font-weight: bold;">Effect of acute sympathetic activation on leg vasodilation before and after endurance exercise.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931221_Uphill_versus_downhill_high-intensity_training_effectiveness_in_preserving_vascular_function_and_exercise_performance_in_runners_who_reduce_their_regular_endurance_training" target="_blank"><span style="font-weight: normal;">Gentilin A, Budel L, Cevese A, et al.</span> <span style="font-weight: bold;">Uphill versus downhill high-intensity training effectiveness in preserving vascular function and exercise performance in runners who reduce their regular endurance training.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931220_Ergogenic_effects_of_citrulline_supplementation_on_exercise_performance_e_fisiological_indexes_during_cycling_tests_A_review" target="_blank"><span style="font-weight: normal;">Gentilin A, Zanini P, Cevese A, et al.</span> <span style="font-weight: bold;">Ergogenic effects of citrulline supplementation on exercise performance e fisiological indexes during cycling tests: A review.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931219_Post-exercise_upside-down_recovery_accelerates_heart_rate_recovery_but_does_not_improve_subsequent_sprint_performance" target="_blank"><span style="font-weight: normal;">Gentilin A, Tam E, Tarperi C, et al.</span> <span style="font-weight: bold;">Post-exercise upside-down recovery accelerates heart rate recovery but does not improve subsequent sprint performance.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931218_Pedaling_cadence_variability_increases_by_worsening_the_bike_fitting_across_most_but_not_all_workloads" target="_blank"><span style="font-weight: normal;">Gentilin A, Tecchio P, Cevese A, et al.</span> <span style="font-weight: bold;">Pedaling cadence variability increases by worsening the bike fitting across most but not all workloads.</span></a></li>
+        <li><a href="https://www.researchgate.net/publication/381931217_Prolonged_visual_reaction_time_after_strenuous_endurance_exercise_higher_increment_in_male_rispetto_a_female_recreational_runners" target="_blank"><span style="font-weight: normal;">Gentilin A, Skroce K, Schena F, Tarperi C.</span> <span style="font-weight: bold;">Prolonged visual reaction time after strenuous endurance exercise: higher increment in male rispetto a female recreational runners.</span></a></li>
+    </ol>
+</div>
         </section>
 
         <!-- Footer -->
-        <footer id="footer" style="text-align: center; margin-top: 3em; padding: 20px;">
+        <footer id="footer" style="text-align: center; margin-top: 3em;">
             <span class="copyright">&copy; Dev. by Alessandro Gentilin.</span>
         </footer>
 
@@ -173,20 +99,9 @@
 </div>
 
 <script>
-    window.onload = function() { 
-        document.body.classList.remove('is-preload'); 
-    }
-    // Abilita lo scroll solo per l'area del contenuto
-    window.ontouchmove = function(e) { 
-        // Permetti lo scroll solo all'interno dell'elemento #main
-        if (e.target.closest('#main')) {
-            return true;
-        }
-        return false;
-    }
-    window.onorientationchange = function() { 
-        document.getElementById('main').scrollTop = 0; 
-    }
+    window.onload = function() { document.body.classList.remove('is-preload'); }
+    window.ontouchmove = function() { return false; }
+    window.onorientationchange = function() { document.body.scrollTop = 0; }
 </script>
 </body>
 </html>
